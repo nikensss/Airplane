@@ -9,6 +9,8 @@ Array.prototype.last = function () {
 
 function setup() {
 	let c = createCanvas(WIDTH, HEIGHT);
+	c.attribute("id","gameCanvas");
+	c = document.getElementById("gameCanvas");
 	let g = document.getElementById("game");
 	g.appendChild(c);
 	interval = 15;
