@@ -8,7 +8,8 @@ Array.prototype.last = function () {
 }
 
 function setup() {
-	createCanvas(WIDTH, HEIGHT);
+	let c = createCanvas(WIDTH, HEIGHT);
+	c.parent(document.getElementById("game"));
 	interval = 15;
 	game = new Game();
 	menu = new Menu();
