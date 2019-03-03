@@ -1,7 +1,7 @@
 const WIDTH = 600;
 const HEIGHT = 740;
 
-var game, menu, airplane, blocks, interval, scene;
+var game, menu, airplane, blocks, interval, scene, objectsToRestart;
 
 Array.prototype.last = function () {
 	return this[this.length - 1];
@@ -9,7 +9,7 @@ Array.prototype.last = function () {
 
 function setup() {
 	let c = createCanvas(WIDTH, HEIGHT);
-	c.attribute("id","gameCanvas");
+	c.attribute("id", "gameCanvas");
 	c = document.getElementById("gameCanvas");
 	let g = document.getElementById("game");
 	g.appendChild(c);
@@ -19,7 +19,7 @@ function setup() {
 	airplane = new Airplane(game);
 	scene = new Scene();
 	blocks = new Blocks(game);
-
+	objectsToRestart = [airplane, blocks];
 	setInterval(update, interval);
 }
 
@@ -44,9 +44,9 @@ function keyPressed() {
 	if (keyCode === KEY_PAUSE) {
 		game.switchState();
 	}
-	if(game.isOver && keyCode === KEY_RESTART){
+	if (game.isOver && keyCode === KEY_RESTART) {
 		console.log('Restarting...');
-		game.restart([airplane, blocks]);
+		game.restart(objectsToRestart);
 	}
 	if (!game.isPaused && !game.isOver) {
 		if (keyCode === KEY_LEFT || keyCode === KEY_RIGHT) {
@@ -59,6 +59,23 @@ function keyPressed() {
 				color = BLOCK_COLOURS.blue;
 			}
 			airplane.changeColour(color);
+		}
+	}
+}
+
+function mouseClicked() {
+	//check pause
+	if(game.pauseIsClicked){
+		game.switchState();
+	}
+	//check game over and then, what game element was clicked
+	if (game.isOver && game.restartIsClicked) {
+		game.restart(objectsToRestart);
+	} else if (!game.isPaused && !game.isOver) {
+		if (menu.isClicked) {
+			airplane.changeColour(menu.selectedColour);
+		} else {
+			airplane.moveOnClick();
 		}
 	}
 }

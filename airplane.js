@@ -30,6 +30,16 @@ class Airplane {
 		}
 	}
 
+	moveOnClick() {
+		if (mouseX > 0 && mouseX < WIDTH && mouseY > HEIGHT / 2 && mouseY < HEIGHT) {
+			if (mouseX < this.x) {
+				this.move(KEY_LEFT);
+			} else {
+				this.move(KEY_RIGHT);
+			}
+		}
+	}
+
 	changeColour(colour) {
 		this.colour = colour;
 	}

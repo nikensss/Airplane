@@ -4,6 +4,7 @@ class Menu {
         this.y = 0.85 * HEIGHT;
         this.width = 0.8 * WIDTH / 3;
         this.height = 0.1 * HEIGHT;
+        this.selectedColour = null;
     }
 
     draw() {
@@ -58,5 +59,29 @@ class Menu {
         textAlign(CENTER);
         text('3', this.width / 2, 12 * this.height / 13);
         pop();
+    }
+
+    get isClicked(){
+        let clicked = mouseX > this.x && mouseX < this.x + this.width * 3 && mouseY > this.y && mouseY < this.y + this.height;
+        if(clicked){
+            if(mouseX < this.x + this.width){
+                this.selectedColour = BLOCK_COLOURS.red;
+            } else if (mouseX < this.x + 2 * this.width){
+                this.selectedColour = BLOCK_COLOURS.purple;
+            } else {
+                this.selectedColour = BLOCK_COLOURS.blue;
+            }
+        }
+        return clicked;
+    }
+
+    get selectedColour(){
+        var sel = this.selectedCol;
+        this.selectedCol = null;
+        return sel;
+    }
+
+    set selectedColour(col){
+        this.selectedCol = col;
     }
 }

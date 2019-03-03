@@ -65,6 +65,11 @@ class Game {
         return this.pause;
     }
 
+    get pauseIsClicked(){
+        let clicked = mouseX > 0 && mouseX < WIDTH && mouseY > 0 && mouseY < HEIGHT/2;
+        return clicked;
+    }
+
     set isPaused(state) {
         if (typeof state === 'boolean') {
             if (!this.isOver) {
@@ -116,5 +121,12 @@ class Game {
                 gameObject.restart();
             }
         }
+    }
+
+    get restartIsClicked(){
+        if(mouseX > WIDTH/2 - 50 && mouseX < WIDTH/2+50 && mouseY > HEIGHT/2 - 50 && mouseY < HEIGHT/2 + 50){
+            return true;
+        }
+        return false;
     }
 }

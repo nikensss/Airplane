@@ -20,7 +20,7 @@
       background-color: darkcyan;
       font-family: 'Montserrat';
       font-size: 24px;
-      margin: 2px;
+      margin: 0;
       padding: 0;
     }
 
@@ -29,18 +29,38 @@
       flex-direction: row;
     }
 
-    #controls {
-      width: 35%;
-      padding-top: 200;
-      padding-left: 100;
+    .left-column {
+      flex-direction: column;
+      width: 40%;
+      padding-top: auto;
+      padding-left: 50;
     }
 
-    #floating-window{
+    .right-column{
+      flex-direction: column;
+      width: 60%;
+      margin-right: 30px;
+    }
+
+    .floating-window {
       width: 90%;
       background-color: rgb(136, 127, 255);
+      text-align: left;
     }
 
-    #game{
+    .floating-window h2 {
+      text-align: center;
+    }
+
+    .control-key {
+      color: brown;
+    }
+
+    h2 {
+      text-decoration: underline;
+    }
+
+    #game {
       width: 65%;
       text-align: center;
     }
@@ -49,15 +69,24 @@
 
 <body>
   <div class=wrapper>
-    <div id="controls">
-      <div id="floating-window">
-        <p>'P': pause</p>
-        <p>Arrow keys: move left and right</p>
-        <p>1, 2, 3: change airplane colour</p>
+    <div class="left-column">
+      <div class="floating-window">
+        <h2>Desktop version</h2>
+        <p><span class="control-key">'P'</span>: pause</p>
+        <p><span class="control-key">Arrow keys</span>: move left and right</p>
+        <p><span class="control-key">1, 2, 3</span>: change airplane colour</p>
+      </div>
+      <div class="floating-window">
+        <h2>Mobile version</h2>
+        <p><span class="control-key">Click upper half</span>: pause</p>
+        <p><span class="control-key">Click lower half</span>: move left and right</p>
+        <p><span class="control-key">Click on colour</span>: change airplane colour</p>
       </div>
     </div>
-    <div id="game">
+    <div class="right-column">
+      <div id="game">
 
+      </div>
     </div>
   </div>
 </body>
