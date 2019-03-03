@@ -5,48 +5,48 @@ body {
     font-size: 24px;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .wrapper {
+.wrapper {
     display: flex;
     flex-direction: row;
-  }
+}
 
-  .left-column {
+.left-column {
     flex-direction: column;
     width: 40%;
     padding-top: auto;
     padding-left: 50;
-  }
+}
 
-  .right-column{
+.right-column {
     flex-direction: column;
     width: 60%;
     margin-right: 30px;
-  }
+}
 
-  .floating-window {
+.floating-window {
     width: 90%;
     background-color: rgb(136, 127, 255);
     text-align: left;
     padding-left: 5px;
     margin: 5px;
     border-radius: 10px;
-  }
+}
 
-  .floating-window h2 {
+.floating-window h2 {
     text-align: center;
-  }
+}
 
-  .control-key {
+.control-key {
     color: brown;
-  }
+}
 
-  h2 {
+h2 {
     text-decoration: underline;
-  }
+}
 
-  .right-column {
+.right-column {
     width: 65%;
     text-align: left;
-  }
+}
