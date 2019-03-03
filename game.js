@@ -6,7 +6,7 @@ const KEY_RESTART = 82;
 
 class Game {
     constructor() {
-        this.pause = false;
+        this.pause = true;
         this.gameOver = false;
         this.score = {
             red: 0,
