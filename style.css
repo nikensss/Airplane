@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    background-color: darkcyan;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left-column {
+    flex-direction: column;
+    width: 40%;
+    padding-top: auto;
+    padding-left: 50;
+  }
+
+  .right-column{
+    flex-direction: column;
+    width: 60%;
+    margin-right: 30px;
+  }
+
+  .floating-window {
+    width: 90%;
+    background-color: rgb(136, 127, 255);
+    text-align: left;
+    padding-left: 5px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+
+  .floating-window h2 {
+    text-align: center;
+  }
+
+  .control-key {
+    color: brown;
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+
+  .right-column {
+    width: 65%;
+    text-align: left;
+  }
